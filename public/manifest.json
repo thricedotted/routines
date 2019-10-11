@@ -1,0 +1,21 @@
+{
+  "short_name": "Routines",
+  "name": "Routines",
+  "icons": [
+    {
+      "src": "/images/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#F2F1EF",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#F2F1EF"
+}

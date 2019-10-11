@@ -1,0 +1,235 @@
+/* Self-hosting fonts code!
+	 https://google-webfonts-helper.herokuapp.com/fonts/work-sans?subsets=latin
+*/
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+       url(/fonts/MaterialIcons-Regular.woff) format('woff');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/* work-sans-300 - latin */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Work Sans Light'), local('WorkSans-Light'),
+       url('/fonts/work-sans-v5-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/work-sans-v5-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* work-sans-regular - latin */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Work Sans'), local('WorkSans-Regular'),
+       url('/fonts/work-sans-v5-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/work-sans-v5-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* work-sans-500 - latin */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Work Sans Medium'), local('WorkSans-Medium'),
+       url('/fonts/work-sans-v5-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/work-sans-v5-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* work-sans-700 - latin */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Work Sans Bold'), local('WorkSans-Bold'),
+       url('/fonts/work-sans-v5-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/work-sans-v5-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* work-sans-600 - latin */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Work Sans SemiBold'), local('WorkSans-SemiBold'),
+       url('/fonts/work-sans-v5-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/work-sans-v5-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+*/
+
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--font-primary: 'Work Sans', sans-serif;
+
+	--color-bg: #F2F1EF;
+	--color-fg: hsla(110, 10%, 10%); 
+
+	--color-fg-light: hsla(110, 10%, 10%, 0.5); 
+	--color-bg-light: #fff;
+	--color-accent: hsla(110, 10%, 10%); 
+
+	--gutter: 0.8rem;
+	--double-gutter: calc(var(--gutter) * 2);
+	--shim: calc(var(--gutter) / 2);
+	--half-shim: calc(var(--gutter) / 4);
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+html,
+body,
+div,
+ul,
+li,
+main,
+section,
+header,
+footer {
+	max-width: none;
+}
+
+body {
+	background: var(--color-bg);
+	color: var(--color-fg);
+
+	font-family: var(--font-primary);
+	padding-top: 4rem;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input[type=text], 
+input[type=time], 
+input[type=number] {
+  border: none;
+  background: var(--color-bg);
+}
+
+input[type=text]:focus, 
+input[type=time]:focus, 
+input[type=number]:focus {
+  background: var(--color-bg-light);
+}
+
+
+button {
+	display: inline-block;
+	cursor: pointer;
+	padding: var(--shim);
+	margin: 0;
+}
+
+button[type=button] {
+  border: none;
+  background: transparent;
+	color: inherit;
+}
+
+h1, h2, h3 {
+	font-family: var(--font-secondary);
+	font-weight: 300;
+}
+
+#routines-app {
+	/*
+	padding: 0 1rem;
+	max-width: 32rem;
+	*/
+}
+
+#routines-app div[slot=header] {
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	z-index: 1;
+	/*box-shadow: 0 0 1rem gray;*/
+}
+
+#routines-app div[slot=main] {
+	position: relative;
+	margin: auto;
+	max-width: 32rem;
+	padding: 0 1rem;
+}
+
+.card {
+	background: var(--color-bg-light);
+
+	border: 0.1rem solid var(--color-fg);
+	box-shadow: 0 0.1rem 0 var(--color-accent);
+
+  /*box-shadow: 0rem 0rem 0.2rem lightgray;*/
+	border-radius: 0.2rem;
+	margin: var(--gutter) 0;
+}
+
+.action-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* UTILITY CLASSES */
+.space-between > * + * {
+	margin-top: var(--gutter);
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
