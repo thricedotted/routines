@@ -180,6 +180,12 @@ h1, h2, h3 {
 	font-weight: 300;
 }
 
+hr {
+  border: none;
+  border-top: 1px dotted var(--color-fg-light);
+  margin: var(--gutter) 0;
+}
+
 #routines-app {
 	/*
 	padding: 0 1rem;

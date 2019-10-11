@@ -1,4 +1,5 @@
 import Home from './routes/Home.svelte'
+import About from './routes/About.svelte'
 import EditRoutine from './routes/EditRoutine.svelte'
 import ViewRoutine from './routes/ViewRoutine.svelte'
 import NotFound from './routes/NotFound.svelte'
@@ -6,6 +7,9 @@ import NotFound from './routes/NotFound.svelte'
 const routes = {
   // list of all routines
   '/': Home,
+
+  // about/info page
+  '/about': About,
 
   // create a routine
   '/new': EditRoutine,
@@ -15,11 +19,6 @@ const routes = {
 
   // view existing routine
   '/routine/:id': ViewRoutine,
-
-  /*
-  // single routine
-  '/routine/:id/:edit?': SingleRoutine,
-  */
 
   // final catch-all
   '*': NotFound

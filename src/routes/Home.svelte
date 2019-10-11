@@ -19,12 +19,16 @@
     <HeaderLayout>
       <span slot="title">Routines</span>
 
-      <i slot="nav-action" class="material-icons">home</i>
-
-      <button type="button"
-              slot="page-actions"
-              on:click={() => push('/new')}
-              ><i class="material-icons">add</i></button>
+      <div slot="page-actions" class="action-container">
+        <button type="button"
+                aria-label="about this app"
+                on:click={() => push('/about')}
+                ><i class="material-icons">info</i></button>
+        <button type="button"
+                aria-label="add new routine"
+                on:click={() => push('/new')}
+                ><i class="material-icons">add</i></button>
+      </div>
     </HeaderLayout>
   </div>
 
