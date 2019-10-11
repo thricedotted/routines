@@ -161,6 +161,9 @@ input[type=number]:focus {
   background: var(--color-bg-light);
 }
 
+input[type=time] {
+  width: unset; /* needed for time box to flex. might be a bad idea tho */
+}
 
 button {
 	display: inline-block;

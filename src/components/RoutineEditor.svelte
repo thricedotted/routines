@@ -71,11 +71,12 @@
 
 .routine-name, .routine-time {
   position: relative;
+  display: flex;
+  flex-flow: column;
   margin-top: var(--extra-margin);
 }
 
 .routine-name input, .routine-time input {
-  width: 100%;
   font-size: 1.6rem;
   font-weight: 600;
   padding: var(--gutter);
