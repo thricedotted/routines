@@ -41,9 +41,9 @@ a::after {
 </style>
 
 <div class="routine-summary card">
-  <h2 class="routine-name">
+  <h3 class="routine-name">
     <a href="/routine/{routine._id}" use:link>{routine.name}</a>
-  </h2>
+  </h3>
 
   <div class="routine-meta">
     <p>{routine.startTimeString}&ndash;{routine.endTimeString} &bull; {routine.totalTime} minutes</p>

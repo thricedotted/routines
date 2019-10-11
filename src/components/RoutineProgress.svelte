@@ -20,7 +20,7 @@
 
 <style>
 .routine-progress {
-  margin: var(--gutter) 0;
+  margin-bottom: var(--gutter) 0;
 }
 
 progress[value] {

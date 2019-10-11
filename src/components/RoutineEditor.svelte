@@ -69,11 +69,19 @@
   border-radius: 0.2rem;
 }
 
+
 .routine-name, .routine-time {
   position: relative;
   display: flex;
   flex-flow: column;
-  margin-top: var(--extra-margin);
+}
+
+.routine-name  {
+  margin-top: calc(var(--label-height) * 0.5);
+}
+
+.routine-time {
+  margin-top: calc(var(--extra-margin) + 0.2rem);
 }
 
 .routine-name input, .routine-time input {
@@ -95,15 +103,22 @@
 
 .routine-steps {
   position: relative;
+  display: flex;
+  flex-flow: column;
   margin-top: var(--extra-margin);
   padding-top: var(--extra-padding);
   margin-bottom: 0;
 }
 
+/* This fixes a border overlap issue...
+   But I'm not sure what causes the border overlap
+   issue in the first place.
+ */
+.routine-steps > * {
+  margin: 0.1rem;
+}
+
 .add-step {
-  position: relative;
-  width: 100%;
-  margin: auto;
   display: flex;
   align-items: center;
 

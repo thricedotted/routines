@@ -180,7 +180,7 @@ button[type=button] {
 
 h1, h2, h3 {
 	font-family: var(--font-secondary);
-	font-weight: 300;
+  font-weight: 600;
 }
 
 hr {
@@ -208,7 +208,7 @@ hr {
 	position: relative;
 	margin: auto;
 	max-width: 32rem;
-	padding: 0 1rem;
+	padding: var(--gutter);
 }
 
 .card {

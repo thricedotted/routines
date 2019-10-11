@@ -33,8 +33,10 @@
   </div>
 
   <div slot="main">
-    <p><br>Welcome to routines! Here are your routines.</p>
-    <RoutinesList routines={$routines} />
+    <section class="my-routines">
+      <h2>My Routines</h2>
+      <RoutinesList routines={$routines} />
+    </section>
   </div>
 
 </AppLayout>
