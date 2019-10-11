@@ -4,7 +4,7 @@
 	import { routines } from './stores'
 </script>
 
-{#await routines.loaded}
+{#await $routines.loaded}
 
 <p>loading...</p>
 
