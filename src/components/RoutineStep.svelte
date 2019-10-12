@@ -21,6 +21,7 @@
 
 .routine-step-duration {
   font-weight: 300;
+  white-space: nowrap;
 }
 
 .routine-step input[type=checkbox] {
