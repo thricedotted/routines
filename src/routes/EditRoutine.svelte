@@ -10,7 +10,7 @@
 
   const isNew = $location === '/new'
 
-  const routine = routines.find(params.id)
+  $: routine = $routines.find(x => x._id === params.id)
   // TODO: handle routine not found!
 
   function onCancel() {
@@ -55,6 +55,7 @@
 }
 </style>
 
+{#if routine || isNew}
 <AppLayout>
 
   <!-- 
@@ -99,5 +100,4 @@
   </div>
 
 </AppLayout>
-
-
+{/if}

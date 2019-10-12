@@ -18,16 +18,7 @@ function createRoutineStore() {
     console.log('Routines loaded from PouchDB into Svelte store!')
   }
 
-  const find = id => {
-    let routine
-
-    const unsubscribe = subscribe(arr => {
-      routine = arr.find(x => x._id === id)
-    })
-    unsubscribe()
-
-    return routine
-  }
+  const ready = load()
 
   const findIndex = id => {
     let idx
@@ -76,12 +67,9 @@ function createRoutineStore() {
     }
   }
 
-  const loaded = load()
-
   return {
     subscribe,
-    loaded,
-    find,
+    ready,
     save,
     remove
   }

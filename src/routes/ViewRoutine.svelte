@@ -10,10 +10,11 @@
 
   export let params = {}
 
-  const routine = routines.find(params.id)
+  $: routine = $routines.find(x => x._id === params.id)
   // TODO: redirect if routine is not found!
 </script>
 
+{#if routine}
 <AppLayout>
 
   <!-- 
@@ -45,5 +46,4 @@
   </div>
 
 </AppLayout>
-
-
+{/if}
