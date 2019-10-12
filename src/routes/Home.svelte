@@ -1,5 +1,5 @@
 <script>
-  import { push } from 'svelte-spa-router'
+  import { push, link } from 'svelte-spa-router'
 
   import { routines } from '../stores'
 
@@ -8,6 +8,23 @@
 
   import RoutinesList from '../components/RoutinesList.svelte'
 </script>
+
+<style>
+.new {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.create-first {
+  font-weight: 600;
+  background: var(--color-fg);
+  color: var(--color-bg);
+  border-radius: 0.8rem;
+  padding: var(--gutter);
+  box-shadow: 0 0 0.2rem var(--color-accent);
+}
+</style>
 
 <AppLayout>
 
@@ -33,10 +50,25 @@
   </div>
 
   <div slot="main">
+    {#if $routines.length > 0}
+
     <section class="my-routines">
       <h2>My Routines</h2>
       <RoutinesList routines={$routines} />
     </section>
+
+    {:else}
+
+    <section class="new space-between">
+      <p>No routines yet!</p>
+      <button type="button"
+              class="create-first"
+              aria-label="add new routine"
+              on:click={() => push('/new')}
+              >create my first routine</button>
+    </section>
+
+    {/if}
   </div>
 
 </AppLayout>

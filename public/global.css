@@ -137,7 +137,7 @@ body {
 	color: var(--color-fg);
 
 	font-family: var(--font-primary);
-	padding-top: 4rem;
+  padding-top: 4rem;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -208,7 +208,7 @@ hr {
 	position: relative;
 	margin: auto;
 	max-width: 32rem;
-	padding: var(--gutter);
+  padding: var(--gutter);
 }
 
 .card {
