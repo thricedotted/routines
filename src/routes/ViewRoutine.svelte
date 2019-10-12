@@ -27,14 +27,14 @@
 
       <button type="button"
               slot="nav-action"
-              class="back"
+              class="icon"
               aria-label="back to routines"
               on:click={() => push('/')}
               ><i class="material-icons">arrow_back</i></button>
 
       <button type="button"
               slot="page-actions"
-              class="edit"
+              class="icon"
               aria-label="edit this routine"
               on:click={() => push(`/routine/${routine._id}/edit`)}
               ><i class="material-icons">edit</i></button>

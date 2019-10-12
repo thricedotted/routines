@@ -1,5 +1,4 @@
-/* Self-hosting fonts code!
-	 https://google-webfonts-helper.herokuapp.com/fonts/work-sans?subsets=latin
+/* Self-hosting Material Icons
 */
 
 @font-face {
@@ -36,6 +35,10 @@
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
+
+/* Self-hosting fonts code!
+	 https://google-webfonts-helper.herokuapp.com/fonts/work-sans?subsets=latin
+*/
 
 /* work-sans-300 - latin */
 @font-face {
@@ -82,7 +85,8 @@
        url('/fonts/work-sans-v5-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('/fonts/work-sans-v5-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-*/
+
+/* GLOBALS */
 
 * {
 	box-sizing: border-box;
@@ -101,7 +105,14 @@
 	--gutter: 0.8rem;
 	--double-gutter: calc(var(--gutter) * 2);
 	--shim: calc(var(--gutter) / 2);
-	--half-shim: calc(var(--gutter) / 4);
+  --half-shim: calc(var(--gutter) / 4);
+  
+  --radius-small: 0.2rem;
+  --radius-medium: 0.4rem;
+  --radius-large: 0.8rem;
+
+  --border-thin: 1px dotted var(--color-fg-light);
+  --border-thick: 0.1rem solid var(--color-fg);
 }
 
 /* Remove default margin */
@@ -118,18 +129,6 @@ blockquote,
 dl,
 dd {
   margin: 0;
-}
-
-html,
-body,
-div,
-ul,
-li,
-main,
-section,
-header,
-footer {
-	max-width: none;
 }
 
 body {
@@ -170,12 +169,7 @@ button {
 	cursor: pointer;
 	padding: var(--shim);
 	margin: 0;
-}
-
-button[type=button] {
   border: none;
-  background: transparent;
-	color: inherit;
 }
 
 h1, h2, h3 {
@@ -198,10 +192,21 @@ hr {
 
 #routines-app div[slot=header] {
 	position: fixed;
-	top: 0;
+  top: 0;
+  /* TODO: when scrollbar shows up, this width doesn't adjust */
 	width: 100vw;
 	z-index: 1;
 	/*box-shadow: 0 0 1rem gray;*/
+}
+
+#routines-app div[slot=page-actions] {
+	display: flex;
+	align-items: center;
+  justify-content: center;
+}
+
+#routines-app div[slot=page-actions] > button {
+  margin-left: var(--shim);
 }
 
 #routines-app div[slot=main] {
@@ -218,17 +223,51 @@ hr {
 	box-shadow: 0 0.1rem 0 var(--color-accent);
 
   /*box-shadow: 0rem 0rem 0.2rem lightgray;*/
-	border-radius: 0.2rem;
+	border-radius: var(--radius-small);
 	margin: var(--gutter) 0;
 }
 
+button.primary {
+  background: var(--color-fg);
+  color: var(--color-bg);
+  font-weight: 600;
+
+  padding: var(--shim) var(--gutter);
+  margin: var(--gutter) 0;
+
+  border-radius: var(--radius-large);
+  box-shadow: 0 0 0.2rem var(--color-fg);
+}
+
+button.secondary {
+  background: transparent;
+	color: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+button.icon {
+  background: transparent;
+  color: inherit;
+}
+
+button.link {
+  background: inherit;
+  color: inherit;
+  font-weight: 700;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* UTILITY CLASSES */
 .action-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-/* UTILITY CLASSES */
 .space-between > * + * {
 	margin-top: var(--gutter);
 }

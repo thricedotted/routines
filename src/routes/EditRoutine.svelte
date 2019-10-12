@@ -49,12 +49,6 @@
   }
 </script>
 
-<style>
-.save {
-  margin-left: var(--gutter);
-}
-</style>
-
 {#if routine || isNew}
 <AppLayout>
 
@@ -70,20 +64,20 @@
 
       <button type="button"
               slot="nav-action"
-              class="cancel"
+              class="icon"
               aria-label="cancel"
               on:click={onCancel}
               ><i class="material-icons">close</i></button>
 
-      <div class="action-container" slot="page-actions">
+      <div slot="page-actions">
         <button type="button"
-                class="delete"
+                class="icon"
                 aria-label="delete"
                 on:click={onRemove}
                 ><i class="material-icons">delete</i></button>
 
         <button type="button"
-                class="save"
+                class="icon"
                 aria-label="save"
                 on:click={onSave}
                 ><i class="material-icons">save</i></button>

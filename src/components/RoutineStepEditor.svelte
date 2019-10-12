@@ -38,8 +38,9 @@
 .routine-step-name, 
 .routine-step-duration input {
   padding: var(--shim);
-  border-bottom: 0.1rem solid var(--color-fg-light);
-  border-radius: 0.2rem 0.2rem 0 0;
+  border-bottom: var(--border-thick);
+  border-color: var(--color-fg-light);
+  border-radius: var(--radius-small) var(--radius-small) 0 0;
 }
 
 .routine-step-duration input {
@@ -52,8 +53,6 @@
 }
 
 .remove {
-  position: relative;
-  color: var(--color-fg-dim);
   order: -1;
 }
 
@@ -84,7 +83,7 @@
   </div>
 
   <button type="button"
-          class="remove"
+          class="icon remove"
           on:click={() => dispatch('removeStep')}
           ><i class="material-icons">remove</i></button>
 </div>

@@ -66,9 +66,8 @@
 
   color: var(--color-bg);
   padding: var(--label-padding);
-  border-radius: 0.2rem;
+  border-radius: var(--radius-small);
 }
-
 
 .routine-name, .routine-time {
   position: relative;
@@ -122,9 +121,9 @@
   display: flex;
   align-items: center;
 
-  border-top: 1px dotted var(--color-fg-light);
-  padding: var(--gutter);
   background: var(--color-bg);
+  border-top: var(--border-thin);
+  padding: var(--gutter);
 
   font-weight: 600;
 }
@@ -148,41 +147,11 @@
   color: var(--color-fg-light);
 }
 
-.save {
-  background: var(--color-accent);
-  border: none;
-  border-radius: 0.8rem;
-  padding: var(--shim) var(--gutter);
-  box-shadow: 0 0 0.2rem var(--color-accent);
-  color: var(--color-bg);
-  font-weight: 600;
-  width: 50vw;
-  margin: var(--gutter) 0;
-/*
-  position: fixed;
-  bottom: 0;
-*/
-}
-
-.cancel {
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
 .routine-estimates {
   text-align: center;
   margin: var(--gutter) 0;
 }
 
-.routine-estimates button {
-  display: inline-block;
-  border: none;
-  padding: 0;
-  margin: 0;
-  background: inherit;
-  color: inherit;
-  font-weight: 700;
-}
 </style>
 
 <form class="routine-editor" on:submit|preventDefault={dispatchSave}>
@@ -243,17 +212,19 @@
     {#if routineClone.endTime}
     <p>You'll need to start at <b>{routineClone.startTimeString}</b><br>to finish by <b>{routineClone.endTimeString}</b>.</p>
     {:else}
-    <p>Enter a <button type="button" on:click="{() => document.getElementById('routine-time').focus() }">finish time</button> to get an estimate on when to start this routine!</p>
+    <p>Enter a <button type="button" class="link" on:click="{() => document.getElementById('routine-time').focus() }">finish time</button> to get an estimate on when to start this routine!</p>
     {/if}
   </div>
 
   <div class="action-container">
-    <button type="submit" class="save">save routine!</button>
+    <button type="submit" 
+            class="primary"
+            >save routine!</button>
   </div>
 
   <div class="action-container">
     <button type="button" 
-            class="cancel" 
+            class="secondary" 
             on:click={() => dispatch('cancel')}
             >never mind</button>
   </div>

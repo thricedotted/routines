@@ -15,15 +15,6 @@
   flex-flow: column;
   align-items: center;
 }
-
-.create-first {
-  font-weight: 600;
-  background: var(--color-fg);
-  color: var(--color-bg);
-  border-radius: 0.8rem;
-  padding: var(--gutter);
-  box-shadow: 0 0 0.2rem var(--color-accent);
-}
 </style>
 
 <AppLayout>
@@ -36,12 +27,14 @@
     <HeaderLayout>
       <span slot="title">Routines</span>
 
-      <div slot="page-actions" class="action-container">
+      <div slot="page-actions">
         <button type="button"
+                class="icon"
                 aria-label="about this app"
                 on:click={() => push('/about')}
                 ><i class="material-icons">info</i></button>
         <button type="button"
+                class="icon"
                 aria-label="add new routine"
                 on:click={() => push('/new')}
                 ><i class="material-icons">add</i></button>
@@ -62,7 +55,7 @@
     <section class="new space-between">
       <p>No routines yet!</p>
       <button type="button"
-              class="create-first"
+              class="primary"
               aria-label="add new routine"
               on:click={() => push('/new')}
               >create my first routine</button>
