@@ -18,6 +18,7 @@
 .routine-step-inputs {
   display: flex;
   flex-flow: row wrap;
+  flex-grow: 1;
   margin-left: var(--gutter);
 }
 
@@ -39,6 +40,10 @@
   padding: var(--shim);
   border-bottom: 0.1rem solid var(--color-fg-light);
   border-radius: 0.2rem 0.2rem 0 0;
+}
+
+.routine-step-duration input {
+  min-width: 3ch;
 }
 
 .routine-step-name:focus,
