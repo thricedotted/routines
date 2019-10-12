@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 import PouchDB from 'pouchdb'
 import { writable, readable } from 'svelte/store'
 
@@ -77,9 +79,9 @@ function createRoutineStore() {
 
 export const routines = createRoutineStore()
 
-export const currentTime = readable(new Date(), set => {
+export const currentTime = readable(moment(), set => {
 	const interval = setInterval(() => {
-		set(new Date())
+		set(moment())
 	}, 1000)
 
 	return () => {

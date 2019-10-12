@@ -13,8 +13,8 @@
 
   $: minutesLeft = routine.totalTime - minutesComplete
 
-  $: now = dateToTimeString($currentTime)
-  $: eta = dateToTimeString(new Date($currentTime.getTime() + (minutesLeft * 60000)))
+  $: now = $currentTime.format('LT')
+  $: eta = $currentTime.clone().add(minutesLeft, 'minutes').format('LT')
 
 </script>
 
