@@ -3,10 +3,6 @@
 
   export let routine, stepStates
 
-  function dateToTimeString(date) {
-    return date.toLocaleTimeString(navigator.language, {timeStyle: 'short'})
-  }
-
   $: minutesComplete = routine.steps.map((step, i) => {
     return stepStates[i] ? step.duration : 0
   }).reduce((acc, d) => acc + d, 0)
