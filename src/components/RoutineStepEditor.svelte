@@ -60,6 +60,11 @@
   color: var(--color-fg-light);
 }
 
+.routine-step-move {
+  display: flex;
+  flex-flow: column;
+}
+
 </style>
 
 <div class="routine-step">
@@ -84,6 +89,20 @@
 
   <button type="button"
           class="icon remove"
+          aria-label="remove step"
           on:click={() => dispatch('removeStep')}
           ><i class="material-icons">remove</i></button>
+
+  <div class="routine-step-move">
+    <button type="button"
+            class="icon"
+            aria-label="move step up"
+            on:click={() => dispatch('moveUp')}
+            ><i class="material-icons">arrow_drop_up</i></button>
+    <button type="button"
+            class="icon"
+            aria-label="move step down"
+            on:click={() => dispatch('moveDown')}
+            ><i class="material-icons">arrow_drop_down</i></button>
+  </div>
 </div>
