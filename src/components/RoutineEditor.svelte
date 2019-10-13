@@ -31,7 +31,7 @@
     routineClone.steps = [...routineClone.steps.slice(0, i), ...routineClone.steps.slice(i + 1)]
   }
 
-  function dispatchSave() {
+  export function dispatchSave() {
     dispatch('save', routineClone)
   }
 

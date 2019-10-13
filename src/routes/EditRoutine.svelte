@@ -7,6 +7,8 @@
   import RoutineEditor from '../components/RoutineEditor.svelte'
 
   export let params = {}
+  let editorComponent
+  $: console.log(editorComponent)
 
   const isNew = $location === '/new'
 
@@ -79,7 +81,7 @@
         <button type="button"
                 class="icon"
                 aria-label="save"
-                on:click={onSave}
+                on:click={() => editorComponent.dispatchSave()}
                 ><i class="material-icons">save</i></button>
       </div>
     </HeaderLayout>
@@ -87,6 +89,7 @@
 
   <div slot="main">
     <RoutineEditor {routine}
+                   bind:this={editorComponent}
                    on:save={onSave}
                    on:cancel={onCancel}
                    on:remove={onRemove}
