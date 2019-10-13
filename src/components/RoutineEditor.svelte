@@ -30,6 +30,13 @@
   function removeStep(i) {
     routineClone.steps = [...routineClone.steps.slice(0, i), ...routineClone.steps.slice(i + 1)]
   }
+  function moveStepUp(i) {
+    [routineClone.steps[i-1], routineClone.steps[i]] = [routineClone.steps[i], routineClone.steps[i-1]]
+  }
+
+  function moveStepDown(i) {
+    [routineClone.steps[i], routineClone.steps[i+1]] = [routineClone.steps[i+1], routineClone.steps[i]]
+  }
 
   export function dispatchSave() {
     dispatch('save', routineClone)
@@ -172,22 +179,12 @@
     <RoutineStepsList steps={routineClone.steps}
                       let:step
                       let:i>
-        <RoutineStepEditor {i} {step}
-                          on:removeStep={() =>removeStep(i)}
-                          />
+        <RoutineStepEditor {i} {step} totalSteps={routineClone.steps.length}
+                           on:removeStep={() => removeStep(i)}
+                           on:moveUp={() => moveStepUp(i)}
+                           on:moveDown={() => moveStepDown(i)}
+                           />
     </RoutineStepsList>
-
-    <!--
-    <SortableList list={routineClone.steps}
-                  on:sort={evt => routineClone.steps = evt.detail}
-                  key="_id"
-                  let:item
-                  let:index>
-      <RoutineStepEditor i={index} step={item}
-                         on:removeStep={() =>removeStep(index)}
-                        />
-    </SortableList>
-    -->
 
     <button type="button"
             class="add-step"

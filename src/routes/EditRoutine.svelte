@@ -8,7 +8,6 @@
 
   export let params = {}
   let editorComponent
-  $: console.log(editorComponent)
 
   const isNew = $location === '/new'
 

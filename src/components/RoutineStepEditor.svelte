@@ -2,7 +2,10 @@
   import { createEventDispatcher } from 'svelte'
   const dispatch = createEventDispatcher()
 
-  export let step, i
+  export let step, i, totalSteps
+
+  $: isFirst = i === 0
+  $: isLast = i === totalSteps - 1
 </script>
 
 <style>
@@ -65,6 +68,10 @@
   flex-flow: column;
 }
 
+button[disabled] {
+  opacity: 0.25;
+}
+
 </style>
 
 <div class="routine-step">
@@ -89,6 +96,7 @@
 
   <button type="button"
           class="icon remove"
+          disabled={isFirst && isLast}
           aria-label="remove step"
           on:click={() => dispatch('removeStep')}
           ><i class="material-icons">remove</i></button>
@@ -96,11 +104,14 @@
   <div class="routine-step-move">
     <button type="button"
             class="icon"
+            disabled={isFirst}
             aria-label="move step up"
             on:click={() => dispatch('moveUp')}
             ><i class="material-icons">arrow_drop_up</i></button>
+
     <button type="button"
             class="icon"
+            disabled={isLast}
             aria-label="move step down"
             on:click={() => dispatch('moveDown')}
             ><i class="material-icons">arrow_drop_down</i></button>
