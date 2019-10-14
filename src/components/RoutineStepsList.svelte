@@ -1,7 +1,10 @@
 <script>
   import { slide } from 'svelte/transition'
+  import { flip } from 'svelte/animate'
 
   export let steps
+
+  const duration = 250
 </script>
 
 <style>
@@ -21,7 +24,8 @@ li + li {
 
 <ul>
   {#each steps as step, i (step._id)}
-  <li transition:slide|local>
+  <li transition:slide|local={{duration}}
+      animate:flip={{duration}}>
     <slot {step} {i}></slot>
   </li>
   {/each}
