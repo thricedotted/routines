@@ -15,6 +15,25 @@
   flex-flow: column;
   align-items: center;
 }
+
+.my-routines {
+  overflow: hidden;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  background: var(--color-bg);
+}
+
+h2::after {
+  content: '';
+  display: block;
+  flex-grow: 1;
+  margin-left: var(--gutter);
+  height: 0.2rem;
+  background: var(--color-fg);
+}
 </style>
 
 <AppLayout>
