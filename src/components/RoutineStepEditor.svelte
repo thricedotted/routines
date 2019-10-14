@@ -70,6 +70,7 @@
 
 button[disabled] {
   opacity: 0.25;
+  cursor: default;
 }
 
 </style>
