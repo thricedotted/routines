@@ -29,7 +29,7 @@
 
       <button type="button"
               slot="nav-action"
-              class="back"
+              class="icon"
               aria-label="back to routines"
               on:click={() => push('/')}
               >
