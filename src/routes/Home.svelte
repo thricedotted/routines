@@ -33,6 +33,7 @@ h2::after {
   margin-left: var(--gutter);
   height: 0.2rem;
   background: var(--color-fg);
+  border-radius: var(--radius-small);
 }
 </style>
 
