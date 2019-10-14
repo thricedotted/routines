@@ -1,4 +1,6 @@
 <script>
+  import { slide } from 'svelte/transition'
+
   export let steps
 </script>
 
@@ -18,8 +20,8 @@ li + li {
 </style>
 
 <ul>
-  {#each steps as step, i (i)}
-  <li>
+  {#each steps as step, i (step._id)}
+  <li transition:slide|local>
     <slot {step} {i}></slot>
   </li>
   {/each}
