@@ -46,5 +46,16 @@ self.addEventListener('fetch', event => {
     return response ? response : fetch(event.request)
   }
 
+  async function updateCache() {
+    const appCache = await caches.open('app-cache-v1')
+    const match = await appCache.match(event.request)
+    if (match) {
+      const response = await fetch(event.request)
+      return appCache.put(event.request, response)
+    }
+  }
+
   event.respondWith(matchCache())
+
+  event.waitUntil(updateCache())
 })
