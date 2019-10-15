@@ -43,7 +43,8 @@
 
     <div class="card">
       <section class="main">
-        <p><b>Routines</b> is a tiny single-page app that helps manage... routines.</p>
+        <p><b>Routines</b> is a tiny single-page app for tracking routines. All data is stored locally.</p>
+        <p>For more information, check out the <a href="https://github.com/thricedotted/routines">GitHub repo</a>.</p>
       </section>
 
       <hr>
